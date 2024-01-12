@@ -18,5 +18,5 @@ func init() {
 	within the cli.
 	*/
 
-	Help.AddCommand()
+	Help.AddCommand(Init)
 }
