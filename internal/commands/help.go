@@ -20,4 +20,5 @@ func init() {
 
 	Help.AddCommand(Init)
 	Help.AddCommand(catFile)
+    Help.AddCommand(hashObject)
 }
