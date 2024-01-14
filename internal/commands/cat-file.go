@@ -13,11 +13,14 @@ import (
 var catFile = &cobra.Command{
 	Use:   "cat-file",
 	Short: "Reads out the tracked git blob based on a given SHA",
-	Args:  cobra.ExactArgs(1),
+	Args:  cobra.NoArgs,
 	RunE: func(cmd *cobra.Command, args []string) error {
-		sha := args[0]
+        flag := cmd.Flag("pretty-print")
+		sha := flag.Value.String()
+        directory := sha[:2]
+        fileName := sha[2:]
 
-		path := fmt.Sprintf("%s/objects/%s", root, sha)
+		path := fmt.Sprintf("%s/objects/%s/%s", root, directory, fileName)
 
 		contents, err := os.ReadFile(path)
 		if err != nil {
