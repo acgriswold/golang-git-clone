@@ -20,7 +20,7 @@ var catFile = &cobra.Command{
         directory := sha[:2]
         fileName := sha[2:]
 
-		path := fmt.Sprintf("%s/objects/%s/%s", root, directory, fileName)
+		path := fmt.Sprintf("%s/%s/%s", objectsDirectory, directory, fileName)
 
 		contents, err := os.ReadFile(path)
 		if err != nil {

@@ -15,7 +15,6 @@ var hashObject = &cobra.Command{
 	Short: "compute the object ID value for an object",
 	Args:  cobra.NoArgs,
 	RunE: func(cmd *cobra.Command, args []string) error {
-        objectsDirectory := fmt.Sprintf("%s/objects", root)
         _, err := os.ReadDir(objectsDirectory)
         if err != nil {
             fmt.Println("Must initialize git repository before running commands")
