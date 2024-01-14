@@ -19,4 +19,5 @@ func init() {
 	*/
 
 	Help.AddCommand(Init)
+	Help.AddCommand(catFile)
 }
